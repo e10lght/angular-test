@@ -1,14 +1,38 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Component, NgModule } from '@angular/core';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import routeConfig from './routes';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [HomeComponent, RouterModule],
+  template: `
+    <main>
+      <a [routerLink]="['/']">
+        <header class="brand-name">
+          <img
+            class="brand-logo"
+            src="/assets/logo.svg"
+            alt="logo"
+            aria-hidden="true"
+          />
+        </header>
+      </a>
+      <section class="content">
+        <router-outlet></router-outlet>
+      </section>
+    </main>
+  `,
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'angular-test';
+  title = 'homes';
 }
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

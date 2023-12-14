@@ -1,0 +1,6 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.bracketSpacing": false,
+  "prettier.configPath": ".prettierrc"
+}
